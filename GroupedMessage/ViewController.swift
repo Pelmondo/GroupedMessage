@@ -8,14 +8,20 @@
 
 import UIKit
 
+struct ChatMessage {
+    let text: String
+    let isIncoming: Bool
+}
+
 class ViewController: UITableViewController {
 
     fileprivate let cellID = "id123"
     
-    let textMasseges = [
-    "Here my first message",
-    "This is the secind massege and it's longer then first massege",
-    "And this massege very huge and repeat again and again, And this massege very huge and repeat again and again, And this massege very huge and repeat again and again, And this massege very huge and repeat again and again"
+    let chatMassages = [
+        ChatMessage(text: "his is the secind massege and it's longer then first massege", isIncoming: true),
+        ChatMessage(text: "Yo, dog, Whatsup?", isIncoming: false),
+        ChatMessage(text: "Here my first message", isIncoming: false),
+        ChatMessage(text: "And this massege very huge and repeat again and again, And this massege very huge and repeat again and again, And this massege very huge and repeat again and again, And this massege very huge and repeat again and again", isIncoming: true)
     ]
     
     override func viewDidLoad() {
@@ -26,17 +32,24 @@ class ViewController: UITableViewController {
         
         tableView.register(MessageCell.self, forCellReuseIdentifier: cellID)
         tableView.separatorStyle = .none
+        tableView.backgroundColor = UIColor(white: 0.95, alpha: 1)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return textMasseges.count
+        return chatMassages.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! MessageCell
-//        cell.textLabel?.text = "Ureal long text in thic cell, and i'm so sorry for my bad english languege"
-//        cell.textLabel?.numberOfLines = 0
-        cell.messageLabel.text = textMasseges[indexPath.row]
+        let chatMessage = chatMassages[indexPath.row]
+        
+        
+//        cell.messageLabel.text = chatMessage.text
+//        cell.isIncoming = chatMessage.isIncoming
+        cell.chatMessage = chatMessage
+        
+//        cell.isIncoming = indexPath.row.isMultiple(of: 2) // check of odd/even
+        
         return cell
     }
 }
