@@ -13,6 +13,7 @@
 		567E1573224E7CD900CC7782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567E1571224E7CD900CC7782 /* Main.storyboard */; };
 		567E1575224E7CDB00CC7782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567E1574224E7CDB00CC7782 /* Assets.xcassets */; };
 		567E1578224E7CDB00CC7782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567E1576224E7CDB00CC7782 /* LaunchScreen.storyboard */; };
+		5689F7482252827D001ADCCA /* DateHeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5689F7472252827D001ADCCA /* DateHeaderLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		567E1574224E7CDB00CC7782 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		567E1577224E7CDB00CC7782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		567E1579224E7CDB00CC7782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5689F7472252827D001ADCCA /* DateHeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHeaderLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				567E156D224E7CD900CC7782 /* AppDelegate.swift */,
 				567E156F224E7CD900CC7782 /* ViewController.swift */,
 				567E1571224E7CD900CC7782 /* Main.storyboard */,
+				5689F7472252827D001ADCCA /* DateHeaderLabel.swift */,
 				567E1574224E7CDB00CC7782 /* Assets.xcassets */,
 				567E1576224E7CDB00CC7782 /* LaunchScreen.storyboard */,
 				567E1579224E7CDB00CC7782 /* Info.plist */,
@@ -141,6 +144,7 @@
 				567E1570224E7CD900CC7782 /* ViewController.swift in Sources */,
 				567E156E224E7CD900CC7782 /* AppDelegate.swift in Sources */,
 				5608C7222250E31D00664510 /* MessageCell.swift in Sources */,
+				5689F7482252827D001ADCCA /* DateHeaderLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

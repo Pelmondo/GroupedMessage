@@ -27,13 +27,6 @@ class ViewController: UITableViewController {
 
     fileprivate let cellID = "id123"
     
-//    let chatMassages = [
-//        ChatMessage(text: "his is the secind massege and it's longer then first massege", isIncoming: true),
-//        ChatMessage(text: "Yo, dog, Whatsup?", isIncoming: false),
-//        ChatMessage(text: "Here my first message", isIncoming: false),
-//        ChatMessage(text: "And this massege very huge and repeat again and again, And this massege very huge and repeat again and again, And this massege very huge and repeat again and again, And this massege very huge and repeat again and again", isIncoming: true)
-//    ]
-    
     let chatMessages = [
         [
            ChatMessage(text: "his is the secind massege and it's longer then first massege", isIncoming: true, date: Date.dateFromCustomString(customString: "10/03/2019")),
@@ -63,16 +56,43 @@ class ViewController: UITableViewController {
         return chatMessages.count
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        <#code#>
+//    }
+    
+    
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let firstMessageInSection = chatMessages[section].first {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MM/dd/yyyy"
             let dateString = dateFormatter.string(from: firstMessageInSection.date)
-            return dateString
-        }
         
-        return "Section: \(Date())"
+            let label = DateHeaderLabel()
+        
+            label.text = dateString
+            let containerView = UIView()
+        
+            containerView.addSubview(label)
+            label.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+            label.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
+        
+            return containerView
+        }
+        return nil
     }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+//
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    
+//        }
+    
+//        return "Section: \(Date())"
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return chatMessages[section].count
